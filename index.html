@@ -24,34 +24,43 @@
   }
   
   h1 {
-    font-size: 2.5rem;
+    font-size: clamp(1.5rem, 5vw, 2.5rem);
     margin-bottom: 15px;
   }
   
   .message {
-    font-size: 1.2rem;
+    font-size: clamp(1rem, 3vw, 1.2rem);
     margin-bottom: 25px;
     font-style: italic;
   }
   
   #countdown {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-  }
+  display: flex;
+  justify-content: center;
+  gap: clamp(5px, 2vw, 20px); /* gap shrinks on mobile */
+  flex-wrap: nowrap; /* force single line */
+}
+
   
-  #countdown div {
-    background: rgba(255, 105, 180, 0.9);
-    padding: 20px;
-    border-radius: 12px;
-    min-width: 80px;
-  }
+#countdown div {
+  background: rgba(255, 105, 180, 0.9);
+  padding: clamp(8px, 2vw, 20px);
+  border-radius: 12px;
+  min-width: clamp(50px, 18vw, 80px); /* resizes with screen */
+}
+
   
-  #countdown span {
-    font-size: 2rem;
-    font-weight: bold;
-    display: block;
-  }
+#countdown span {
+  font-size: clamp(1rem, 4vw, 2rem); /* shrinks on small screens */
+  font-weight: bold;
+  display: block;
+}
+
+#countdown p {
+  margin: 0;
+  font-size: clamp(0.7rem, 3vw, 1rem);
+}
+
   </style>
 </head>
 <body>
